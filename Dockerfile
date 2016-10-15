@@ -26,6 +26,7 @@ RUN yum -y -q install git
 
 RUN git clone --depth 1 git://github.com/php-build/php-build.git /usr/local/src/php-build
 RUN sh /usr/local/src/php-build/install.sh
+RUN rm -rf /usr/local/src/php-build
 RUN echo --with-apxs2 >> /usr/local/share/php-build/default_configure_options
 RUN php-build 5.2.17 /usr/local
 
